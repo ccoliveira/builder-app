@@ -113,6 +113,7 @@
                   filterable>
                   <el-option
                     v-for="item in statusList"
+                    :key="item.id"
                     :value="item.id"
                     :label="item.label"
                   />

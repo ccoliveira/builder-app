@@ -17,8 +17,9 @@
   }
 </script>
 
+<!--
 <template>
-  <!--<ul class="nav navbar-nav">
+  <ul class="nav navbar-nav">
     <router-link :to="{ name: 'ServiceOrderList' }" tag="li" exact v-show="authMenuMainServiceOrder">
       <a>Ordem de Serviço</a>
     </router-link>
@@ -34,6 +35,7 @@
     <router-link :to="{ name: 'UserList' }" tag="li" exact v-show="authMenuMainUser">
       <a>Usuário</a>
     </router-link>
-  </ul>-->
+  </ul>
 </template>
+-->
 

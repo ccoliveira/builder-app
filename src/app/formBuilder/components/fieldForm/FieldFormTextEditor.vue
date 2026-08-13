@@ -27,16 +27,16 @@
       }
     },
     components: {
-      FieldFormPlaceholder,
-      FieldFormPrefix,
-      FieldFormSufix,
-      FieldFormMask,
-      FieldFormMinSize,
-      FieldFormMaxSize,
-      FieldFormRegex,
+      //FieldFormPlaceholder,
+      //FieldFormPrefix,
+      //FieldFormSufix,
+      //FieldFormMask,
+      //FieldFormMinSize,
+      //FieldFormMaxSize,
+      //FieldFormRegex,
       FieldFormHint,
-      FieldFormEventOnBlur,
-      FieldFormEventOnFocus,
+      //FieldFormEventOnBlur,
+      //FieldFormEventOnFocus,
       FieldFormName,
       FieldFormColumnName,
       FieldFormPersistent,
@@ -44,7 +44,7 @@
       FieldFormShowInDetails,
       FieldFormShowInForm,
       FieldFormRequired,
-      FieldFormCriterion,
+      //FieldFormCriterion,
       FieldFormHideOnPrint
     }
   }

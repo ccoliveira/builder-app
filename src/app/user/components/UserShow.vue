@@ -220,7 +220,7 @@
     <el-tab-pane :label="$t('userGroups')" name="userGroups" id="userGroups">
 
       <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4" v-for="item in userGroup.list">
+        <div class="col-xs-12 col-sm-6 col-md-4" v-for="item in userGroup.list" :key="item.id">
           <el-checkbox v-model="item.checked">{{item.name}}</el-checkbox>
         </div>
       </div>

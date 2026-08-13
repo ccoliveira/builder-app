@@ -33,7 +33,7 @@
       }
     },
     components: {
-      MaskedField
+      //MaskedField
     },
     created() {
       util.resolveRules(this.attr, this.rules);

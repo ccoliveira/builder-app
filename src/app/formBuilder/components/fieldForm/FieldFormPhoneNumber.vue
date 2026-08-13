@@ -20,7 +20,7 @@
       FieldFormMask,
       FieldFormMinSize,
       FieldFormMaxSize,
-      FieldFormRegex,
+      //FieldFormRegex,
       FieldFormHint,
       FieldFormEventOnBlur,
       FieldFormEventOnFocus,

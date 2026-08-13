@@ -33,6 +33,7 @@
 
       <el-table-column
         v-for="item in _columnsToShow"
+        :key="item.value"
         :label="item.label"
         inline-template >
         <div>{{row[item.value]}}</div>

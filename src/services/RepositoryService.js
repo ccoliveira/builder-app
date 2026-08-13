@@ -6,7 +6,7 @@ import utilsService from './UtilsService'
 export default {
 
   searchAutoComplete(url) {
-    let self = this;
+    //let self = this;
 
     return http.get(url)
       .then(response => {
@@ -123,7 +123,7 @@ export default {
   save(url, form, notLoadEntityLocation) {
     let self = this;
 
-    let dataSend = JSON.stringify(form);
+    //let dataSend = JSON.stringify(form);
 
     return http({
       method: form.id ? 'put' : 'post',

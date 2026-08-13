@@ -62,6 +62,7 @@
     <el-select v-model="updateFieldValue" :placeholder="getPlaceholder()">
       <el-option
         v-for="item in options"
+        :key="item.value"
         :label="item.label"
         :value="item.value">
       </el-option>

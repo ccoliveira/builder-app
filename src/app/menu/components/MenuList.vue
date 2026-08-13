@@ -187,6 +187,7 @@
                     filterable>
                     <el-option
                       v-for="item in typeList"
+                      :key="item.value"
                       :label="item.label"
                       :value="item.value"/>
                   </el-select>
@@ -245,7 +246,7 @@
 
                 <tbody>
 
-                <tr v-for="fieldsDataRow in list(payload)">
+                <tr v-for="fieldsDataRow in list(payload)" :key="fieldsDataRow.id">
 
                   <td class="buttonIcon">
                     <el-button
@@ -265,7 +266,7 @@
                       @click.prevent="goToEdit(fieldsDataRow)">
                       <i class="glyphicon glyphicon-edit"></i>
                     </el-button>
-
+                  </td>
                   <td :data-th="$t('contract')">
                     <span>{{fieldsDataRow.contract.label}}</span>
                   </td>

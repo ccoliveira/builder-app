@@ -25,7 +25,7 @@
 <template>
   <div>
     <div class="alert alert-danger" v-if="messages.length">
-      <p v-for="message in messages">{{message}}</p>
+      <p v-for="(message, index) in messages" :key="index">{{message}}</p>
     </div>
   </div>
 </template>

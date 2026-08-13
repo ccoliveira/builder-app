@@ -86,6 +86,7 @@
             <el-select v-model="itemsPerPageSelected" @change="changeItemsPerPage()">
               <el-option
                 v-for="item in itemsPerPageOptions"
+                :key="item"
                 :value="item">
               </el-option>
             </el-select>
@@ -103,6 +104,7 @@
             <el-select v-model="currentPage" @change="changePage(currentPage)">
               <el-option
                 v-for="item in totalPages"
+                :key="item"
                 :value="item">
               </el-option>
             </el-select>

@@ -24,7 +24,8 @@ export default {
 
 </script>
 
-<style src="assets/sass/app.scss" lang="sass"></style>
+
+<style src="assets/sass/app.scss" lang="scss"></style>
 <style src="assets/css/app.css"></style>
 <style src="assets/css/bootstrap-override.css"></style>
 <style src="assets/css/element-override.css"></style>

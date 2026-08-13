@@ -9,7 +9,7 @@
   export default {
     components: {
       FooterShow,
-      SpanTrueOrFalse,
+      //SpanTrueOrFalse,
       Roles
     },
     data() {
@@ -127,7 +127,7 @@
 
     <el-tab-pane :label="$t('users')" name="users" id="users">
       <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-2" v-for="item in userList">
+        <div class="col-xs-12 col-sm-4 col-md-2" v-for="item in userList" :key="item.id">
           <label>{{item.name}}</label>
         </div>
       </div>

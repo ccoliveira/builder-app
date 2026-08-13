@@ -99,13 +99,15 @@
 }
 
 .meu-container {
-    background: url(./icpuback.jpg) no-repeat center;
-    width: 100%;
-    display: block;
-    padding-bottom: 0;
-    margin-bottom: 0;
-    min-height: 100%;
-    background-size: cover;
+  background-image: url(./icpuback.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  display: block;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  min-height: 100%;
+  background-size: cover;
 }
 .wrapper {
     background: rgba(0, 0, 0, 0.8);

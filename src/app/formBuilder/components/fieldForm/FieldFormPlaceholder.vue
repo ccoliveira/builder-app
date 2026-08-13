@@ -14,16 +14,19 @@
     <div class="row">
       <div class="col-xs-4">
         <el-form-item label="Placeholder Pt" v-if="fieldData.type != 'cnpj' && fieldData.type != 'cpf'">
+          <!-- eslint-disable-next-line vue/no-mutating-props -- fieldData is intentionally filled in by this component -->
           <el-input v-model="fieldData.placeholderPt" auto-complete="off"></el-input>
         </el-form-item>
       </div>
       <div class="col-xs-4">
         <el-form-item label="Placeholder Es" v-if="fieldData.type != 'cnpj' && fieldData.type != 'cpf'">
+          <!-- eslint-disable-next-line vue/no-mutating-props -- fieldData is intentionally filled in by this component -->
           <el-input v-model="fieldData.placeholderEs" auto-complete="off"></el-input>
         </el-form-item>
       </div>
       <div class="col-xs-4">
         <el-form-item label="Placeholder En" v-if="fieldData.type != 'cnpj' && fieldData.type != 'cpf'">
+          <!-- eslint-disable-next-line vue/no-mutating-props -- fieldData is intentionally filled in by this component -->
           <el-input v-model="fieldData.placeholderEn" auto-complete="off"></el-input>
         </el-form-item>
       </div>

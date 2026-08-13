@@ -15,7 +15,7 @@
     components: {
       FieldFormCommons,
       FieldFormPlaceholder,
-      FieldFormRequired,
+      //FieldFormRequired,
       FieldFormHint,
       FieldFormEventOnChange,
       FieldFormDisableField

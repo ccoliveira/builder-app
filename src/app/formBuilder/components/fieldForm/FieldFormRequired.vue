@@ -12,8 +12,8 @@
 <template>
   <div class="col-xs-4">
     <el-form-item :label="$t('required')">
-      <el-switch
-        v-model="fieldData.required"
+      <!-- eslint-disable-next-line vue/no-mutating-props -- fieldData is intentionally filled in by this component -->
+      <el-switch v-model="fieldData.required"
         :on-text="$t('yes')"
         :off-text="$t('no')"
         :disabled="disable"

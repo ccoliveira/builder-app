@@ -1,53 +1,53 @@
 <script>
-  import FieldFormPlaceholder from './FieldFormPlaceholder.vue'
-  import FieldFormPrefix from './FieldFormPrefix.vue'
-  import FieldFormSufix from './FieldFormSufix.vue'
-  import FieldFormMask from './FieldFormMask.vue'
-  import FieldFormMinSize from './FieldFormMinSize.vue'
-  import FieldFormMaxSize from './FieldFormMaxSize.vue'
-  import FieldFormRegex from './FieldFormRegex.vue'
-  import FieldFormHint from './FieldFormHint.vue'
-  import FieldFormEventOnBlur from './FieldFormEventOnBlur.vue'
-  import FieldFormEventOnFocus from './FieldFormEventOnFocus.vue'
+import FieldFormPlaceholder from './FieldFormPlaceholder.vue'
+import FieldFormPrefix from './FieldFormPrefix.vue'
+import FieldFormSufix from './FieldFormSufix.vue'
+import FieldFormMask from './FieldFormMask.vue'
+import FieldFormMinSize from './FieldFormMinSize.vue'
+import FieldFormMaxSize from './FieldFormMaxSize.vue'
+import FieldFormRegex from './FieldFormRegex.vue'
+import FieldFormHint from './FieldFormHint.vue'
+import FieldFormEventOnBlur from './FieldFormEventOnBlur.vue'
+import FieldFormEventOnFocus from './FieldFormEventOnFocus.vue'
 
-  import FieldFormName from './FieldFormName'
-  import FieldFormColumnName from './FieldFormColumnName'
-  import FieldFormPersistent from './FieldFormPersistent'
-  import FieldFormLabel from './FieldFormLabel'
-  import FieldFormShowInDetails from './FieldFormShowInDetails'
-  import FieldFormShowInForm from './FieldFormShowInForm'
-  import FieldFormRequired from './FieldFormRequired.vue'
-  import FieldFormCriterion from './FieldFormCriterion.vue'
-  import FieldFormHideOnPrint from './FieldFormHideOnPrint.vue'
+import FieldFormName from './FieldFormName'
+import FieldFormColumnName from './FieldFormColumnName'
+import FieldFormPersistent from './FieldFormPersistent'
+import FieldFormLabel from './FieldFormLabel'
+import FieldFormShowInDetails from './FieldFormShowInDetails'
+import FieldFormShowInForm from './FieldFormShowInForm'
+import FieldFormRequired from './FieldFormRequired.vue'
+import FieldFormCriterion from './FieldFormCriterion.vue'
+import FieldFormHideOnPrint from './FieldFormHideOnPrint.vue'
 
-  export default{
-    props: ["fieldData", "rules"],
-    data() {
-      return{
-      }
-    },
-    components: {
-      FieldFormPlaceholder,
-      FieldFormPrefix,
-      FieldFormSufix,
-      FieldFormMask,
-      FieldFormMinSize,
-      FieldFormMaxSize,
-      FieldFormRegex,
-      FieldFormHint,
-      FieldFormEventOnBlur,
-      FieldFormEventOnFocus,
-      FieldFormName,
-      FieldFormColumnName,
-      FieldFormPersistent,
-      FieldFormLabel,
-      FieldFormShowInDetails,
-      FieldFormShowInForm,
-      FieldFormRequired,
-      FieldFormCriterion,
-      FieldFormHideOnPrint
+export default{
+  props: ["fieldData", "rules"],
+  data() {
+    return{
     }
+  },
+  components: {
+    //FieldFormPlaceholder,
+    //FieldFormPrefix,
+    //FieldFormSufix,
+    //FieldFormMask,
+    //FieldFormMinSize,
+    //FieldFormMaxSize,
+    //FieldFormRegex,
+    FieldFormHint,
+    //FieldFormEventOnBlur,
+    //FieldFormEventOnFocus,
+    FieldFormName,
+    FieldFormColumnName,
+    FieldFormPersistent,
+    FieldFormLabel,
+    FieldFormShowInDetails,
+    FieldFormShowInForm,
+    FieldFormRequired,
+    //FieldFormCriterion,
+    FieldFormHideOnPrint
   }
+}
 </script>
 <template>
   <div>
@@ -72,6 +72,7 @@
         <div class="row">
           <div class="col-xs-4">
             <el-form-item :label="$t('height')" prop="height">
+              <!-- eslint-disable-next-line vue/no-mutating-props -- fieldData is intentionally filled in by this component -->
               <el-input-number v-model="fieldData.height" ></el-input-number>
             </el-form-item>
           </div>

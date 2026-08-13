@@ -6,7 +6,8 @@
 
   export default {
     name: 'pa-header',
-    components: {Brand, MenuApp, MenuUser},
+    //components: {Brand, MenuApp, MenuUser},
+    components: {Brand, MenuUser},
     data () {
       return {
         isOpen: false,

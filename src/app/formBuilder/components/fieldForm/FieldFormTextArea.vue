@@ -18,7 +18,7 @@
     components: {
       FieldFormCommons,
       FieldFormPlaceholder,
-      FieldFormRequired,
+      //FieldFormRequired,
       FieldFormMinSize,
       FieldFormMaxSize,
       FieldFormHint,

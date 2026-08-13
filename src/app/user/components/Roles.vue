@@ -286,6 +286,7 @@
             filterable>
             <el-option
               v-for="item in assignPermissionOn.typeList"
+              :key="item.label"
               :label="item.label"
               :value="item.value" />
           </el-select>
@@ -302,6 +303,7 @@
             filterable>
             <el-option
               v-for="item in businessLine.list"
+              :key="item.name"
               :label="item.name"
               :value="item.id" />
           </el-select>
@@ -319,6 +321,7 @@
             filterable>
             <el-option
               v-for="item in contract.list"
+              :key="item.nameExtended"
               :label="item.nameExtended"
               :value="item.id" />
           </el-select>
@@ -335,7 +338,7 @@
 
       <div class="row">
 
-        <div class="col-xs-12 col-sm-6 col-md-4" v-for="role in assignPermissionOn.rolesToAssign">
+        <div class="col-xs-12 col-sm-6 col-md-4" v-for="role in assignPermissionOn.rolesToAssign" :key="role.id">
           <el-checkbox
             v-model="role.selected"
             :disabled="role.hasRoleByGroup"

@@ -1,7 +1,5 @@
 <script>
 
-  import util from './cpuUtils'
-
   export default{
     props: [
       "attr", "fieldValue"
@@ -13,8 +11,9 @@
   <div>
     <el-input
       placeholder="Hidden"
-      v-model="fieldValue"
+      :value="fieldValue"
       :readonly="true"
     />
+
   </div>
 </template>

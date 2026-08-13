@@ -1,0 +1,44 @@
+.panel {
+  border-radius: 0px;
+
+  /* borda com sombra */
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.12), 0px 0px 6px 0px rgba(0,0,0,0.04);
+
+  /* borda sem sombra */
+  /*border: 1px solid rgb(236, 229, 223);*/
+
+
+  margin-bottom: 15px;
+}
+
+.page-header {
+  padding-top: 5px;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.panel-heading {
+  border-bottom: 1px solid #f1f1f1;
+}
+
+@media (min-width: 992px) {
+  .page-header {
+    margin: 0 0 20px 10px;
+  }
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+/* bootswatch paper removendo borda inferior */
+textarea:focus, textarea.form-control:focus, input.form-control:focus, input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=number]:focus, [type=text].form-control:focus, [type=password].form-control:focus, [type=email].form-control:focus, [type=tel].form-control:focus, [contenteditable].form-control:focus {
+  box-shadow: none;
+}
+textarea, textarea.form-control, input.form-control, input[type=text], input[type=password], input[type=email], input[type=number], [type=text].form-control, [type=password].form-control, [type=email].form-control, [type=tel].form-control, [contenteditable].form-control {
+  padding: 3px 10px;
+}
+
+
+

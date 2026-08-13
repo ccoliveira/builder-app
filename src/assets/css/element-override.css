@@ -1,0 +1,38 @@
+div.el-form-item label.el-form-item__label, label {
+  font-size: 90%;
+  font-weight: bold;
+  padding-bottom: 3px;
+}
+
+/*div.el-form-item label.el-form-item__label {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  font-size: 90%;
+}*/
+
+/*div.el-form-item {
+  margin-bottom: 12px;
+}*/
+
+.el-table thead>tr>th, .el-table th>.cell {
+  background-color: #f9f9f9;
+}
+
+div.el-input-number {
+  width: 100%;
+}
+
+div.el-date-editor.el-input.el-date-editor--date,
+div.el-date-editor.el-input.el-date-editor--time-select,
+div.el-date-editor.el-input.el-date-editor--datetime,
+div.el-select {
+  width: 100%;
+}
+
+div.el-collapse {
+  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.12), 0px 0px 3px 0px rgba(0,0,0,0.04);
+}
+
+div.el-collapse-item__wrap {
+  background-color: #ffffff;
+}

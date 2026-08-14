@@ -9,9 +9,7 @@ export default {
 
     //LOGIN REAL
     return http.post(LOGIN_URL, {
-      credentials: {
-        username: username
-      },
+      credentials: `[username=${username}]`,
       password: password
     }).then(function (response) {
       return response.data

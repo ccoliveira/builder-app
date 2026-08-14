@@ -104,7 +104,7 @@ export default {
             <!--<el-button
               id="edit"
               size="mini"
-              icon="edit"
+              icon="el-icon-edit"
               type="primary"
               @click.prevent="edit(row)"
             >

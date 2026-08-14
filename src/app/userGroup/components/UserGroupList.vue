@@ -1,7 +1,5 @@
 <script>
   import {mapActions, mapGetters} from 'vuex';
-  import modules from 'src/mainVuex';
-
   import FooterSearch from 'src/components/utils/footerCrud/FooterSearch';
   import Pagination from 'src/components/utils/Pagination';
 
@@ -57,7 +55,10 @@
       _setPage: function (val) {
         this.payload.filter.currentPage = val;
         this.setPage(this.payload);
-      }
+      },
+      returnHintButton: function(buttontype) {
+        return this.$t(buttontype);
+      },
     },
     created () {
 
@@ -110,35 +111,31 @@
             id="resultList"
           >
 
-            <el-table-column
-              width="100"
-              inline-template>
-
-              <div>
+            <el-table-column width="100">
+              <template scope="scope">
                 <el-button
-                  size="mini"
-                  icon="document"
+                  :id="'show_' + scope.row.id"
                   type="primary"
-                  @click.prevent="goToShow(row)"
-                  id="show">
+                  size="mini"
+                  :title="returnHintButton('showShowIcon')"
+                  @click.prevent="goToShow(scope.row)"
+                >
+                  <i class="glyphicon glyphicon-file" />
                 </el-button>
 
                 <el-button
+                  :id="'edit_' + scope.id"
                   type="primary"
                   size="mini"
-                  icon="edit"
-                  @click.prevent="goToEdit(row)"
-                  id="edit">
+                  :title="returnHintButton('showEditIcon')"
+                  @click.prevent="goToEdit(scope.row)"
+                >
+                  <i class="glyphicon glyphicon-edit" />
                 </el-button>
-              </div>
-
+              </template>
             </el-table-column>
 
-            <el-table-column
-              inline-template
-              :label="$t('name')">
-              <div>{{row.name}}</div>
-            </el-table-column>
+            <el-table-column prop="name" :label="$t('name')" />
 
           </el-table>
         </div>

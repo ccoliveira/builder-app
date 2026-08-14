@@ -567,7 +567,7 @@
                   id="edit"
                   type="primary"
                   size="mini"
-                  icon="edit"
+                  icon="el-icon-edit"
                   :title="returnHintButton('showEditIcon')"
                   @click.prevent="editFormInterceptor(row)">
                 </el-button>

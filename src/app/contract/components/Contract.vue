@@ -1,26 +1,36 @@
 <template>
-
-  <module-template :title="resolveTitle()" :subtitle="subtitle">
-    <router-view></router-view>
+  <module-template
+    :title="resolveTitle()"
+    :subtitle="subtitle"
+  >
+    <router-view />
   </module-template>
-
 </template>
 <script>
-  import ModuleTemplate from 'components/root/main/ModuleTemplate.vue'
+import ModuleTemplate from 'components/root/main/ModuleTemplate.vue'
 
-  export default{
-    props: ['appendToTitle', 'subtitle'],
-    methods: {
-      resolveTitle() {
-        if (this.appendToTitle) {
-          return this.$t('contracts') + " - " + this.appendToTitle;
-        } else {
-          return this.$t('contracts');
-        }
-      }
+export default{
+  props: {
+    appendToTitle: {
+      type: String,
+      default: null
     },
-    components: {
-        ModuleTemplate
+    subtitle: {
+      type: String,
+      default: null
     }
+  },
+  methods: {
+    resolveTitle() {
+      if (this.appendToTitle) {
+        return this.$t('contracts') + " - " + this.appendToTitle;
+      } else {
+        return this.$t('contracts');
+      }
+    }
+  },
+  components: {
+    ModuleTemplate
   }
+}
 </script>

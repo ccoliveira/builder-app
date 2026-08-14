@@ -74,79 +74,61 @@ export default {
 <template>
   <modulePanel>
     <div slot="body">
-
       <el-form label-position="top">
         <el-row :gutter="10">
-
-          <el-col :span="12" id="uploadPicture">
+          <el-col
+            id="uploadPicture"
+            :span="12"
+          >
             <el-upload
+              ref="upload"
               :data="instance"
               :auto-upload="false"
-              ref="upload"
               class="avatar-uploader"
               :action="serverUrl()"
               :show-file-list="false"
               :on-change="onChange"
               :on-success="handleAvatarSuccess"
-              :before-upload="beforeAvatarUpload">
-              <img v-if="imageUrl" :src="imageUrl" class="avatar">
-              <i v-else class="line-height avatar-uploader-icon el-icon-plus "></i>
+              :before-upload="beforeAvatarUpload"
+            >
+              <img
+                v-if="imageUrl"
+                :src="imageUrl"
+                class="avatar"
+              >
+              <i
+                v-else
+                class="line-height avatar-uploader-icon el-icon-plus"
+              />
             </el-upload>
           </el-col>
-
         </el-row>
       </el-form>
     </div>
 
-    <el-row :gutter="10" slot="footer">
+    <el-row
+      slot="footer"
+      :gutter="10"
+    >
       <el-col :span="24">
-        <el-button size="small" @click.prevent="backToDetails()" id="buttonBackToDetails">
+        <el-button
+          id="buttonBackToDetails"
+          size="small"
+          @click.prevent="backToDetails()"
+        >
           <i class="glyphicon glyphicon-chevron-left" />
           {{ $t('backToDetails') }}
         </el-button>
-        <el-button type="primary" size="small" @click.prevent="submitUpload()" :disabled="!imageUrl" id="buttonSaveUpload">
-          <i class="glyphicon glyphicon-ok"/> {{ $t('save') }}
+        <el-button
+          id="buttonSaveUpload"
+          type="primary"
+          size="small"
+          :disabled="!imageUrl"
+          @click.prevent="submitUpload()"
+        >
+          <i class="glyphicon glyphicon-ok" /> {{ $t('save') }}
         </el-button>
       </el-col>
     </el-row>
-
   </modulePanel>
 </template>
-
-<style>
-.line-height {
-  line-height: 178px !important ;
-
-}
-.avatar-uploader .el-upload {
-  border: 1px dashed #d9d9d9;
-  border-radius: 6px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
-
-.avatar-uploader .el-upload:hover {
-  border-color: #20a0ff;
-}
-
-.avatar-uploader-icon {
-  font-size: 28px;
-  color: #8c939d;
-  width: 178px;
-  height: 178px;
-  line-height: 178px;
-  text-align: center;
-}
-
-.avatar {
-  width: 178px;
-  height: 178px;
-  display: block;
-}
-
-input.el-upload__input {
-  display: none;
-}
-
-</style>

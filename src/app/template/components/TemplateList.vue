@@ -112,7 +112,7 @@
               <div>
                 <el-button
                   size="mini"
-                  icon="document"
+                  icon="el-icon-document"
                   type="primary"
                   @click.prevent="goToShow(row)"
                   id="show">
@@ -121,7 +121,7 @@
                 <el-button
                   type="primary"
                   size="mini"
-                  icon="edit"
+                  icon="el-icon-edit"
                   @click.prevent="goToEdit(row)"
                   id="edit">
                 </el-button>

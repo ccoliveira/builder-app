@@ -338,7 +338,7 @@ export default{
                   <el-button
                     type="edit"
                     size="mini"
-                    icon="edit"
+                    icon="el-icon-edit"
                     @click.prevent="editHeader(row)">
                   </el-button>
 
@@ -472,7 +472,7 @@ export default{
                   <el-button
                     type="edit"
                     size="mini"
-                    icon="edit"
+                    icon="el-icon-edit"
                     @click.prevent="editAction(row)">
                   </el-button>
 

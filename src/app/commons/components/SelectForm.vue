@@ -1,49 +1,66 @@
 <script>
-  export default {
-    props: [
-      "value", "contractId",
-      "parentFormIsNull", "disabled",
-      "formType"
-      ],
-    computed: {
-      _value: {
-        get: function() {
-          return this.value;
-        },
-        set: function(newValue) {
-          this.$emit('input', newValue);
-        }
+export default {
+  props: {
+    value: {
+      type: [String, Number],
+      default: null
+    },
+    contractId: {
+      type: [String, Number],
+      default: null
+    },
+    parentFormIsNull: {
+      type: Boolean,
+      default: false
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    formType: {
+      type: String,
+      default: null
+    }
+  },
+  computed: {
+    _value: {
+      get: function() {
+        return this.value;
       },
-      filter: function () {
-        let f = {};
-
-        if(this.contractId) {
-          f.contractId = this.contractId;
-        }
-        if(this.parentFormIsNull) {
-          f.parentFormIsNull = true;
-        }
-        if(this.formType) {
-          f.formType= this.formType;
-        }
-
-        return f;
+      set: function(newValue) {
+        this.$emit('input', newValue);
       }
     },
-    methods: {
-      objectValue: function (val) {
-        this.$emit("objectValue", val);
+    filter: function () {
+      let f = {};
+
+      if(this.contractId) {
+        f.contractId = this.contractId;
       }
+      if(this.parentFormIsNull) {
+        f.parentFormIsNull = true;
+      }
+      if(this.formType) {
+        f.formType= this.formType;
+      }
+
+      return f;
+    }
+  },
+  methods: {
+    objectValue: function (val) {
+      this.$emit("objectValue", val);
     }
   }
+}
 </script>
 
 <template>
   <aio-select
     v-model="_value"
     uri="/form"
-    :uriFilter="filter"
-    :formatLabel="(it) => { return it.nameExtended }"
+    :uri-filter="filter"
+    :format-label="(it) => { return it.nameExtended }"
     :disabled="disabled"
     @objectValue="objectValue"
   />

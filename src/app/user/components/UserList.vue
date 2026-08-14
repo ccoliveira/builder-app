@@ -57,7 +57,10 @@
       _setPage: function (val) {
         this.payload.filter.currentPage = val;
         this.setPage(this.payload);
-      }
+      },
+      returnHintButton: function(buttontype) {
+        return this.$t(buttontype);
+      },
     },
     created () {
 
@@ -149,7 +152,7 @@
                   <td data-th="Ações">
                     <el-button
                       size="mini"
-                      icon="document"
+                      icon="el-icon-document"
                       type="primary"
                       @click.prevent="goToShow(row)"
                       id="show">
@@ -158,7 +161,7 @@
                     <el-button
                       type="primary"
                       size="mini"
-                      icon="edit"
+                      icon="el-icon-edit"
                       @click.prevent="goToEdit(row)"
                       id="edit">
                     </el-button>
@@ -191,47 +194,34 @@
             id="resultList"
           >
 
-            <el-table-column
-              width="100"
-              inline-template>
-
-              <div>
+            <el-table-column width="100">
+              <template scope="scope">
                 <el-button
-                  size="mini"
-                  icon="document"
-                  type="primary"
-                  @click.prevent="goToShow(row)"
-                  id="show">
-                </el-button>
-
-                <el-button
+                  :id="'show_' + scope.row.id"
                   type="primary"
                   size="mini"
-                  icon="edit"
-                  @click.prevent="goToEdit(row)"
-                  id="edit">
+                  :title="returnHintButton('showShowIcon')"
+                  @click.prevent="goToShow(scope.row)"
+                >
+                  <i class="glyphicon glyphicon-file" />
                 </el-button>
-              </div>
 
+                  <el-button
+                    :id="'edit_' + scope.id"
+                    type="primary"
+                    size="mini"
+                    :title="returnHintButton('showEditIcon')"
+                    @click.prevent="goToEdit(scope.row)"
+                  >
+                    <i class="glyphicon glyphicon-edit" />
+                  </el-button>
+
+              </template>
             </el-table-column>
 
-            <el-table-column
-              inline-template
-              :label="$t('name')">
-              <div>{{row.name}}</div>
-            </el-table-column>
-
-            <el-table-column
-              inline-template
-              :label="$t('login')">
-              <div>{{row.username}}</div>
-            </el-table-column>
-
-            <el-table-column
-              inline-template
-              :label="$t('email')">
-              <div>{{row.email}}</div>
-            </el-table-column>
+            <el-table-column prop="name" :label="$t('name')" />
+            <el-table-column prop="username" :label="$t('login')" />
+            <el-table-column prop="email" :label="$t('email')" />
 
           </el-table>
         </div>

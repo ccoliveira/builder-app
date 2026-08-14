@@ -2,8 +2,6 @@
 
     import {mapActions} from 'vuex';
 
-    import ModuleTemplate from 'src/components/root/main/ModuleTemplate.vue';
-
     export default {
         //components: {
             //ModuleTemplate

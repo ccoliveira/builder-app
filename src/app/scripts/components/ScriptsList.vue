@@ -125,7 +125,7 @@ import {mapActions, mapGetters} from 'vuex';
               <el-button
                 id="show"
                 size="mini"
-                icon="document"
+                icon="el-icon-document"
                 type="primary"
                 @click.prevent="goToShow(row)">
               </el-button>
@@ -133,7 +133,7 @@ import {mapActions, mapGetters} from 'vuex';
               <el-button
                 id="edit"
                 size="mini"
-                icon="edit"
+                icon="el-icon-edit"
                 type="primary"
                 @click.prevent="goToEdit(row)">
               </el-button>

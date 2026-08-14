@@ -171,7 +171,7 @@ import SpanEmailStatus from './SpanEmailStatus';
                 <el-button
                   id="show"
                   size="mini"
-                  icon="document"
+                  icon="el-icon-document"
                   type="primary"
                   @click.prevent="goToShow(row)">
                 </el-button>

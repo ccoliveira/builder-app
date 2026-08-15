@@ -235,10 +235,12 @@
         return utils.findField(id, this.layout.fields);
       },
       clone: function(original) {
-        return {
+        let newField = {
           id: utils.generateId(),
           type: original
         };
+        this.layout.fields.push(newField);
+        return newField;
       },
       addRow: function(quantity) {
         utils.addRow(this.layout.rows, quantity);
@@ -393,18 +395,18 @@
 
                 <draggable v-model="layout.rows" :options="{group:'rows'}" class="dragArea">
 
-                  <div v-for="row in layout.rows" :key="row.id || layout.rows.indexOf(row)" class="row">
+                  <div v-for="(row, rowIndex) in layout.rows" :key="row.id || layout.rows.indexOf(row)" class="row">
 
                     <div v-for="col in row.cols" :key="col.id || row.cols.indexOf(col)" :class="'col col-xs-' + col.width">
                       <draggable v-model="col.fields" :options="{group: 'fields'}" class="dragArea">
-                        <template> v-for="field in col.fields" :key="field.id || col.fields.indexOf(field)">
-                          <div>
+                        <template v-for="(field, fieldIndex) in col.fields">
+                          <div :key="field.id || fieldIndex">
                             <div class="field-actions pull-right">
                               <span class="primary">{{$t(field.type)}}</span>
-                              <el-button type="text" icon="setting" size="mini" :plain="true"
+                              <el-button type="text" icon="el-icon-setting" size="mini" :plain="true"
                                          @click="fieldEdit(field)"></el-button>
-                              <el-button type="text" icon="delete" size="mini" :plain="true"
-                                         @click="fieldRemove(col.fields, index)"></el-button>
+                              <el-button type="text" icon="el-icon-delete" size="mini" :plain="true"
+                                         @click="fieldRemove(col.fields, fieldIndex)"></el-button>
                             </div>
                             <cpuRender :type="field.type" :attr="getField(field.id)"/>
                             <div v-if="field.type === 'errorList'">
@@ -416,13 +418,12 @@
                           </div>
                         </template>
                       </draggable>
-
                     </div>
 
                     <div class="row-actions">
-                      <el-button type="text" icon="delete" size="mini" :plain="true"
-                                 @click="rowRemove(index)"></el-button>
-                      <el-button type="text" icon="setting" size="mini" :plain="true"
+                      <el-button type="text" icon="el-icon-delete" size="mini" :plain="true"
+                                 @click="rowRemove(rowIndex)"></el-button>
+                      <el-button type="text" icon="el-icon-setting" size="mini" :plain="true"
                                  @click="dialogEditRowOpen(row.cols)"></el-button>
                     </div>
 

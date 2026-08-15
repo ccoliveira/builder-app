@@ -345,7 +345,7 @@ export default{
                   <el-button
                     type="danger"
                     size="mini"
-                    icon="delete"
+                    icon="el-icon-delete"
                     @click.prevent="removeHeader(row)">
                   </el-button>
                 </div>
@@ -479,7 +479,7 @@ export default{
                   <el-button
                     type="danger"
                     size="mini"
-                    icon="delete"
+                    icon="el-icon-delete"
                     @click.prevent="removeAction(row)">
                   </el-button>
                 </div>

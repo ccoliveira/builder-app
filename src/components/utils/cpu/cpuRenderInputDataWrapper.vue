@@ -34,8 +34,8 @@
     <el-form-item :label="getLabel()">
 
       <el-input :placeholder="getPlaceholder()" v-model="localValue" disabled>
-        <el-button slot="prepend" icon="delete"></el-button>
-        <el-button slot="append" icon="search"></el-button>
+        <el-button slot="prepend" icon="el-icon-delete"></el-button>
+        <el-button slot="append" icon="el-icon-search"></el-button>
       </el-input>
 
     </el-form-item>

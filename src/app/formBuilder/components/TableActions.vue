@@ -79,7 +79,7 @@ export default {
             <el-button
               type="danger"
               size="mini"
-              icon="delete"
+              icon="el-icon-delete"
               @click.prevent="remove(row)">
             </el-button>
           </div>
@@ -93,7 +93,7 @@ export default {
     <br>
 
     <el-row>
-      <el-button size="small" icon="plus" @click.prevent="dialogShow()" type="primary">
+      <el-button size="small" icon="el-icon-plus" @click.prevent="dialogShow()" type="primary">
         {{ $t('add') }}
       </el-button>
     </el-row>

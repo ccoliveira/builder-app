@@ -1,3 +1,107 @@
+<script>
+import {mapActions} from 'vuex';
+
+import vue2AceEditor from 'vue2-ace-editor';
+
+export default {
+  data() {
+    return {
+      fullscreen: false,
+      payload: {
+        instance: {
+          id: '',
+          code: '',
+          type: '',
+          description: '',
+          script: '',
+        },
+        uri: '/businessRule',
+        showRouter: '/business-rule/show',
+        context: this,
+        errors: []
+      },
+      typeList: [
+        {
+          value: '',
+          label: ''
+        },
+        {
+          value: 'SERVER',
+          label: 'Server'
+        },
+        {
+          value: 'CLIENT',
+          label: 'Client'
+        }
+      ],
+      content: ''
+    }
+  },
+  components: {
+    vue2AceEditor
+  },
+  computed: {
+    isValidToSubmit: function () {
+      return this.payload.instance.code &&
+        this.payload.instance.type &&
+        this.payload.instance.description &&
+        this.payload.instance.script;
+    }
+  },
+  mounted () {
+
+    let id = this.$route.params.id;
+
+    if (id) {
+      this.fetch({
+        context: this,
+        uri: '/businessRule/' + this.$route.params.id
+      }).then(response => {
+        return response.data;
+      }).then(data => {
+        let instance = this.payload.instance;
+
+        instance.id = data.id;
+        instance.code = data.code;
+        instance.type = data.type;
+        instance.description = data.description;
+        instance.script = data.script;
+      });
+    }
+  },
+  methods: {
+    ...mapActions([
+      'fetch',
+      'save',
+      'showLoader',
+      'hideLoader'
+    ]),
+    backToSearch: function () {
+      this.$router.push('/business-rule');
+    },
+    backToShow: function () {
+      this.$router.push('/business-rule/show/' + this.$route.params.id);
+    },
+    update: function() {
+      console.log('update');
+      let payloadToUpdate = Object.assign({}, this.payload)
+      payloadToUpdate.showRouter = null
+      this.save(payloadToUpdate);
+    },
+    initEditor: function () {
+      require('brace/mode/html');
+      require('brace/mode/groovy');
+      require('brace/mode/javascript');
+      require('brace/mode/less');
+      require('brace/theme/chrome');
+    },
+    toggle () {
+      this.fullscreen = !this.fullscreen
+    }
+  }
+}
+</script>
+
 <template>
   <modulePanel>
     <div slot="body">

@@ -135,8 +135,8 @@ div.col {
                 <div :key="fieldIndex">
                   <div class="field-actions pull-right">
                     <span class="primary">{{$t(field.type)}}</span>
-                    <el-button type="text" icon="setting" size="mini" :plain="true" @click="fieldEdit(field)" />
-                    <el-button type="text" icon="delete" size="mini" :plain="true" @click="fieldRemove(col.fields, fieldIndex)" />
+                    <el-button type="text" icon="el-icon-setting" size="mini" :plain="true" @click="fieldEdit(field)" />
+                    <el-button type="text" icon="el-icon-delete" size="mini" :plain="true" @click="fieldRemove(col.fields, fieldIndex)" />
                   </div>
                   <cpuRender :type="field.type" :attr="getField(field.id)" :rules="rules"/>
                 </div>
@@ -146,8 +146,8 @@ div.col {
           </div>
 
           <div class="row-actions">
-            <el-button type="text" icon="delete" size="mini" :plain="true" @click="rowRemove(index)"></el-button>
-            <el-button type="text" icon="setting" size="mini" :plain="true"
+            <el-button type="text" icon="el-icon-delete" size="mini" :plain="true" @click="rowRemove(index)"></el-button>
+            <el-button type="text" icon="el-icon-setting" size="mini" :plain="true"
                        @click="dialogEditRowOpen(row.cols)"></el-button>
           </div>
 

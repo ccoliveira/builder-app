@@ -33,6 +33,11 @@ export default {
       objectToReturn.fields = Object.assign(objectReference.fields, fieldDesc.fields);
     }
 
+    // Alguns formulários salvos anteriormente podem ter campos referenciados
+    // dentro de rows.cols.fields sem a entrada correspondente na lista "fields".
+    // Reconstrói essa lista para evitar o erro "Field ID not found in fields".
+    this.reconcileFields(objectToReturn.rows, objectToReturn.fields);
+
     if (fieldDesc.filter) {
 
       if (fieldDesc.filter.brId) {
@@ -48,6 +53,8 @@ export default {
         if (fieldDesc.filter.filterDesign.fields) {
           objectToReturn.filter.filterDesign.fields = Object.assign(objectReference.filter.filterDesign.fields, fieldDesc.filter.filterDesign.fields);
         }
+
+        this.reconcileFields(objectToReturn.filter.filterDesign.rows, objectToReturn.filter.filterDesign.fields);
       }
 
       if (fieldDesc.filter.resultDesign) {
@@ -60,6 +67,20 @@ export default {
     }
 
     return objectToReturn;
+  },
+
+  reconcileFields: function (rows, fields) {
+    var self = this;
+    (rows || []).forEach(function (row) {
+      (row.cols || []).forEach(function (col) {
+        (col.fields || []).forEach(function (field) {
+          var index = self.findFieldIndex(field.id, fields);
+          if (index === undefined) {
+            fields.push(field);
+          }
+        });
+      });
+    });
   },
 
   generateId: function () {

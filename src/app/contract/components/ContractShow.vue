@@ -350,9 +350,10 @@
 
         <el-table-column
           id="date"
-          inline-template
           :label="$t('date')">
-          <div><FormatDate :date="row.deployDate" format="DD/MM/YYYY HH:mm"/></div>
+          <template slot-scope="scope">
+            <div><FormatDate :date="scope.row.deployDate" format="DD/MM/YYYY HH:mm"/></div>
+          </template>
         </el-table-column>
 
         <el-table-column

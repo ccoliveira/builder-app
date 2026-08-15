@@ -558,57 +558,55 @@
             id="resultTable"
             :data="formInterceptorsList" >
 
-            <el-table-column
-              width="100"
-              inline-template>
+            <el-table-column width="100">
+              <template slot-scope="scope">
+                <div>
+                  <el-button
+                    id="edit"
+                    type="primary"
+                    size="mini"
+                    icon="el-icon-edit"
+                    :title="$t('showEditIcon')"
+                    @click.prevent="editFormInterceptor(scope.row)">
+                  </el-button>
 
-              <div>
-                <el-button
-                  id="edit"
-                  type="primary"
-                  size="mini"
-                  icon="el-icon-edit"
-                  :title="returnHintButton('showEditIcon')"
-                  @click.prevent="editFormInterceptor(row)">
-                </el-button>
-
-                <el-button type="danger"
-                           size="mini"
-                           icon="delete"
-                           id="delete"
-                           :title="returnHintButton('showDelIcon')"
-                           @click.prevent="removeFormInterceptor(row.id)">
-                </el-button>
-
-              </div>
+                  <el-button type="danger"
+                             size="mini"
+                             icon="el-icon-delete"
+                             id="delete"
+                             :title="$t('showDelIcon')"
+                             @click.prevent="removeFormInterceptor(scope.row.id)">
+                  </el-button>
+                </div>
+              </template>
             </el-table-column>
 
-            <el-table-column
-              inline-template
-              :label="$t('name')" >
-              <div>{{row.name}}</div>
+            <el-table-column :label="$t('name')">
+              <template slot-scope="scope">
+                <div>{{scope.row.name}}</div>
+              </template>
             </el-table-column>
 
-            <el-table-column
-              inline-template
-              :label="$t('type')" >
-              <div>
-                <SpanTypeInterceptor :value="row.type" />
-              </div>
+            <el-table-column :label="$t('type')">
+              <template slot-scope="scope">
+                <div>
+                  <SpanTypeInterceptor :value="scope.row.type" />
+                </div>
+              </template>
             </el-table-column>
 
-            <el-table-column
-              inline-template
-              :label="$t('businessRules')" >
-              <div>{{row.businessRule.label}}</div>
+            <el-table-column :label="$t('businessRules')">
+              <template slot-scope="scope">
+                <div>{{ scope.row.businessRule ? scope.row.businessRule.label : '' }}</div>
+              </template>
             </el-table-column>
 
-            <el-table-column
-              inline-template
-              :label="$t('active')" >
-              <div>
-                <SpanTrueOrFalse :value="row.active" />
-              </div>
+            <el-table-column :label="$t('active')">
+              <template slot-scope="scope">
+                <div>
+                  <SpanTrueOrFalse :value="scope.row.active" />
+                </div>
+              </template>
             </el-table-column>
 
           </el-table>

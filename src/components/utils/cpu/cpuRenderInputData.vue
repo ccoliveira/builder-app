@@ -160,8 +160,8 @@
       </span>
 
       <el-input :placeholder="placeholder" v-model="localValue" disabled>
-        <el-button slot="prepend" icon="search" @click="showModal = true"></el-button>
-        <el-button slot="append" @click.prevent="clearField()" icon="delete"></el-button>
+        <el-button slot="prepend" icon="el-icon-search" @click="showModal = true"></el-button>
+        <el-button slot="append" @click.prevent="clearField()" icon="el-icon-delete"></el-button>
       </el-input>
 
     </el-form-item>

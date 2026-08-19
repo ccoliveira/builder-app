@@ -108,7 +108,7 @@ export default {
       columnName: ''
     }
   },
-  
+
   dbCommons: function () {
     var obj = Object.assign({}, this.columnName());
 

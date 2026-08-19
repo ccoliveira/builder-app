@@ -7,7 +7,7 @@
           return this.fieldData.icon;
         },
         set(value) {
-          this.$emit('update:fieldData', { ...this.fieldData, icon: value });
+          this.$set(this.fieldData, 'icon', value);
         }
       }
     }

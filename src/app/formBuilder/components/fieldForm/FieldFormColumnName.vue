@@ -12,7 +12,7 @@ export default{
         return this.fieldData.columnName;
       },
       set: function(newValue) {
-        this.$emit('update:fieldData', { ...this.fieldData, columnName: newValue });
+        this.$set(this.fieldData, 'columnName', newValue);
       }
     }
   },

@@ -34,13 +34,13 @@ export default{
   },
   computed: {
     _fontSize: {
-      get: function() {
-        return this.fieldData.fontSize;
-      },
-      set: function(newValue) {
-        this.$emit('update:fieldData', { ...this.fieldData, fontSize: newValue });
+        get: function() {
+          return this.fieldData.fontSize;
+        },
+        set: function(newValue) {
+          this.$set(this.fieldData, 'fontSize', newValue);
+        }
       }
-    }
   }
 }
 </script>

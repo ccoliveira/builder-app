@@ -26,6 +26,7 @@ import FieldFormColumnName from './FieldFormColumnName'
   }
 
 </script>
+
 <template>
   <div>
     <el-tabs>
